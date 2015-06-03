@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace EulerProject.Business
 {
-    public class Class1
+    public interface IProblem
     {
+        void Init();
+        void Execute();
     }
 }

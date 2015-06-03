@@ -47,6 +47,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EulerProject.Business\EulerProject.Business.csproj">
+      <Project>{88b328bf-2885-4512-9d38-d4155a974a0b}</Project>
+      <Name>EulerProject.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EulerProject.Utilities\EulerProject.Utilities.csproj">
+      <Project>{6fb180f4-ad30-4079-8af0-0e59c23ef130}</Project>
+      <Name>EulerProject.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
