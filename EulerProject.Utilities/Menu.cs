@@ -3,22 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace EulerProject.Utilities
 {
     public class Menu
     {
-        public Dictionary<int,string> GetData()
+        private Dictionary<int, string> _list;
+
+        public Menu()
         {
-            Dictionary<int, string> problems = new Dictionary<int, string>();
-            Assembly mscorlib = typeof(string).Assembly;
-            Type[] classes = mscorlib.GetTypes();
-            for (int i = 0; i < classes.Count();i++)
+            GetData();
+        }
+        private  void GetData()
+        {
+            _list = new Dictionary<int, string>();
+
+            Assembly mscorlib = Assembly.ReflectionOnlyLoad("EulerProject.Business");
+            foreach (Type type in mscorlib.GetTypes())
             {
-                problems.Add(i,classes[i].FullName);
+                if (type.IsClass&&!type.IsAbstract)
+                    _list.Add(int.Parse(Regex.Match(type.FullName, @"\d+").Value), type.FullName.Split('.').Last());
             }
-            return problems;
+        }
+
+
+        public void Print()
+        {
+            Console.WriteLine("\nSelect:");
+            foreach (KeyValuePair<int, string> item in _list)
+            { 
+                Console.WriteLine(string.Format("{0} - {1}", item.Key, item.Value));
+            }
         }
     }
 }

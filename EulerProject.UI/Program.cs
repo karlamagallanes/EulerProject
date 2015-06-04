@@ -1,5 +1,6 @@
 ﻿using System;
-using BL=EulerProject.Business;
+using EulerProject.Business;
+using EulerProject.Utilities;
 namespace EulerProject.UI
 {
     class Program
@@ -7,13 +8,13 @@ namespace EulerProject.UI
         static void Main(string[] args)
         {
             Console.WriteLine("Euler Project Simulator");
-
-            Console.WriteLine("Run");
-
-            BL.Menu Menu = new BL.Menu();
+            Menu Menu = new Menu();
             Menu.Print();
-            Console.Read();
 
+            Problem1 problem = new Problem1();
+            problem.Execute();
+            
+            Console.Read();
         }
     }
 }
