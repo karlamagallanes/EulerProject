@@ -22,11 +22,21 @@ namespace EulerProject.Business
         public override void Execute()
         {
             Init();
-            Console.WriteLine(string.Format("Result:{0}", Result()));
+            int number = 1000;
+            List<int> multiples = new List<int> {3,5};
+            Console.WriteLine(string.Format("Result:{0}", Result(multiples, number)));
         }
 
-        protected int Result() {
-            return 0;
+        protected int Result(List<int> multiples, int MaxNumber) {
+            List<int> values = new List<int>();
+            foreach(int multiple in multiples)
+            {
+                for (int i = 0; i < MaxNumber; i += multiple)
+                    if (values.IndexOf(i) < 0)
+                        values.Add(i);
+            }
+            values.Sum();
+            return values.Sum();
         }
     }
 }

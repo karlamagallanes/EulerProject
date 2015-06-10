@@ -5,37 +5,35 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using EulerProject.Business;
 
 namespace EulerProject.Utilities
 {
-    public class Menu
+    public static class Menu
     {
-        private Dictionary<int, string> _list;
-
-        public Menu()
+        public static Dictionary<int, string> List;        
+        public static void Init()
         {
-            GetData();
-        }
-        private  void GetData()
-        {
-            _list = new Dictionary<int, string>();
+            List = new Dictionary<int, string>();
 
             Assembly mscorlib = Assembly.ReflectionOnlyLoad("EulerProject.Business");
             foreach (Type type in mscorlib.GetTypes())
             {
-                if (type.IsClass&&!type.IsAbstract)
-                    _list.Add(int.Parse(Regex.Match(type.FullName, @"\d+").Value), type.FullName.Split('.').Last());
+                if (type.IsClass && !type.IsAbstract)
+                    List.Add(int.Parse(Regex.Match(type.FullName, @"\d+").Value), type.FullName.Split('.').Last());
             }
         }
 
-
-        public void Print()
+        public static void Print()
         {
+            Console.Clear();
+            Console.WriteLine("Euler Project Simulator");            
             Console.WriteLine("\nSelect:");
-            foreach (KeyValuePair<int, string> item in _list)
+            foreach (KeyValuePair<int, string> item in List)
             { 
                 Console.WriteLine(string.Format("{0} - {1}", item.Key, item.Value));
             }
+            Console.WriteLine("Press the Escape (Esc) key to quit: \n");
         }
     }
 }
