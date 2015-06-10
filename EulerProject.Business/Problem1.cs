@@ -29,13 +29,12 @@ namespace EulerProject.Business
 
         protected int Result(List<int> multiples, int MaxNumber) {
             List<int> values = new List<int>();
-            foreach(int multiple in multiples)
+            for (int m = 0; m < multiples.Count(); m++)
             {
-                for (int i = 0; i < MaxNumber; i += multiple)
+                for (int i = 0; i < MaxNumber; i += multiples[m])
                     if (values.IndexOf(i) < 0)
                         values.Add(i);
             }
-            values.Sum();
             return values.Sum();
         }
     }
