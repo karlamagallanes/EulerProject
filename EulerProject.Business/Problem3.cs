@@ -14,7 +14,22 @@ namespace EulerProject.Business
         /// </summary>
         public override void Execute()
         {
-            throw new NotImplementedException();
+            Int64 max=600851475143;
+            Console.WriteLine(string.Format("Result: {0}", GetResult(max)));
+        }
+
+
+        private static Int64 GetResult(Int64 max)
+        {
+            List<Int64> primes = new List<Int64>();
+            
+            
+            
+           //TODO: primes must be ordered.
+            return primes.LastOrDefault();
+        }
+    }
+
         }
 
     }
