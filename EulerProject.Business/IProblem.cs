@@ -3,7 +3,5 @@
     public interface IProblem
     {
         void Execute();
-
-        void Init();
     }
 }

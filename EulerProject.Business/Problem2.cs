@@ -20,10 +20,6 @@ namespace EulerProject.Business
             Console.WriteLine(string.Format("Result: {0}", GetResult(max)));
         }
 
-        public override void Init()
-        {
-            throw new NotImplementedException();
-        }
 
         private static int GetResult(int max)
         {

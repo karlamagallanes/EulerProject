@@ -12,7 +12,6 @@ namespace EulerProject.Business
     {
         public override void Execute()
         {
-            Init();
             int number = 1000;
             List<int> multiples = new List<int> { 3, 5 };
             Console.WriteLine(string.Format("Result:{0}", Result(multiples, number)));
@@ -30,9 +29,5 @@ namespace EulerProject.Business
             return values.Sum();
         }
 
-        public override void Init()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
