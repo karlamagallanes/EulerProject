@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EulerProject.Business
 {
@@ -12,21 +10,16 @@ namespace EulerProject.Business
     /// </summary>
     public class Problem1 : Problem
     {
-        public override void Init()
-        {
-            base.id = 1;
-            base.Name = "Problem1";
-        }
-
         public override void Execute()
         {
             Init();
             int number = 1000;
-            List<int> multiples = new List<int> {3,5};
+            List<int> multiples = new List<int> { 3, 5 };
             Console.WriteLine(string.Format("Result:{0}", Result(multiples, number)));
         }
 
-        protected int Result(List<int> multiples, int MaxNumber) {
+        protected int Result(List<int> multiples, int MaxNumber)
+        {
             List<int> values = new List<int>();
             for (int m = 0; m < multiples.Count(); m++)
             {
@@ -35,6 +28,11 @@ namespace EulerProject.Business
                         values.Add(i);
             }
             return values.Sum();
+        }
+
+        public override void Init()
+        {
+            throw new NotImplementedException();
         }
     }
 }
