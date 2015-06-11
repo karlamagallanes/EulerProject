@@ -20,7 +20,9 @@ namespace EulerProject.Utilities
             foreach (Type type in mscorlib.GetTypes())
             {
                 if (type.IsClass && !type.IsAbstract)
+                {
                     List.Add(int.Parse(Regex.Match(type.FullName, @"\d+").Value), type.FullName.Split('.').Last());
+                }
             }
         }
 

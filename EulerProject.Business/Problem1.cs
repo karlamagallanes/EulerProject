@@ -12,11 +12,10 @@ namespace EulerProject.Business
     /// </summary>
     public class Problem1 : Problem
     {
-
         public override void Init()
         {
-            base.Name = "Problem1";
             base.id = 1;
+            base.Name = "Problem1";
         }
 
         public override void Execute()
