@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EulerProject.Business
 {
@@ -18,12 +15,11 @@ namespace EulerProject.Business
             return GetResult(max).ToString();
         }
 
-
         private static double GetResult(double max)
         {
             List<double> primes = new List<double>();
             double d = 2;
-            while (max>1)
+            while (max > 1)
             {
                 while (max % d == 0)
                 {
@@ -34,11 +30,5 @@ namespace EulerProject.Business
             }
             return primes.LastOrDefault();
         }
-       
-
     }
-
 }
-
-
-

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace EulerProject.Business
@@ -19,6 +18,7 @@ namespace EulerProject.Business
             int max = 4000000;
             return GetResult(max).ToString();
         }
+
         private static int GetResult(int max)
         {
             List<int> values = new List<int>();
