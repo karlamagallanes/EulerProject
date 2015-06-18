@@ -10,11 +10,11 @@ namespace EulerProject.Business
     /// </summary>
     public class Problem1 : Problem
     {
-        public override void Execute()
+        public override string Execute()
         {
             int number = 1000;
             List<int> multiples = new List<int> { 3, 5 };
-            Console.WriteLine(string.Format("Result:{0}", Result(multiples, number)));
+            return Result(multiples, number).ToString();
         }
 
         protected int Result(List<int> multiples, int MaxNumber)

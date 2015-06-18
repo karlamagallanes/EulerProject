@@ -6,7 +6,7 @@
 
         public string Name;
 
-        public abstract void Execute();
+        public abstract string Execute();
 
     }
 }

@@ -14,13 +14,11 @@ namespace EulerProject.Business
         /// do not exceed four million, find the sum of the even-valued terms.
         /// </summary>
 
-        public override void Execute()
+        public override string Execute()
         {
             int max = 4000000;
-            Console.WriteLine(string.Format("Result: {0}", GetResult(max)));
+            return GetResult(max).ToString();
         }
-
-
         private static int GetResult(int max)
         {
             List<int> values = new List<int>();

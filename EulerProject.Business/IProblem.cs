@@ -2,6 +2,6 @@
 {
     public interface IProblem
     {
-        void Execute();
+        string Execute();
     }
 }

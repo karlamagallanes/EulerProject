@@ -22,7 +22,7 @@ namespace EulerProject.UI
                     object instance = Activator.CreateInstance(magicType);
                     MethodInfo magicExecutor = magicType.GetMethod("Execute");
                     DateTime initTime= DateTime.Now;
-                    magicExecutor.Invoke(instance, new object[]{});
+                    Console.WriteLine("Result= " + magicExecutor.Invoke(instance, new object[] { }));
                     Console.WriteLine(string.Format("Executed in {0} seconds", (DateTime.Now - initTime).TotalSeconds));
                 }
                 else

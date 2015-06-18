@@ -12,10 +12,10 @@ namespace EulerProject.Business
         /// The prime factors of 13195 are 5, 7, 13 and 29.
         /// What is the largest prime factor of the number 600851475143 ?
         /// </summary>
-        public override void Execute()
+        public override string Execute()
         {
             double max = 600851475143;
-            Console.WriteLine(string.Format("Result: {0}", GetResult(max)));
+            return GetResult(max).ToString();
         }
 
 
