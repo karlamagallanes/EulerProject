@@ -4,6 +4,6 @@ Euler Project Exercises
 
 /*
   Disclaimer:
-  Some of this code was writed under alcohol influence.
+  Some of this code was written under alcohol influence.
   Compile under your own risk.
 */
